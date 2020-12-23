@@ -5,7 +5,7 @@ import uuid
 from subprocess import DEVNULL, STDOUT, check_call
 from datetime import datetime
 
-worklog_dir = "/home/xxxx/worklog/"
+worklog_dir = "/home/oliver/Internship/worklog/"
 image_command = "deepin-screenshot -s " + worklog_dir
 args = sys.argv[1:]
 
@@ -60,9 +60,9 @@ elif args[0] == "wp":
 
 # If view, run view
 elif args[0] == "view":
-    os.system("markdown_previewer " + worklog_dir + args[1] + "/log.md") 
+    command = ("markdown_previewer " + worklog_dir + args[1] + "/log.md").split(" ")
+    check_call(command)
 
 # Otherwhise just add entry
 else:
     add_new_entry(worklog_dir + args[0] + "/", args[1])
-
