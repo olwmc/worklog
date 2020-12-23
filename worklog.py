@@ -23,7 +23,7 @@ def add_new_entry(path, info, image=None):
     now = datetime.now()
     
     # Write down time and info
-    out_file.write("## " + now.strftime("%m/%d/%Y %-I:%M:%S") + "\n\n")
+    out_file.write("## " + now.strftime("%m/%d/%Y %-I:%M:%S %p") + "\n\n")
     out_file.write(info + "\n\n")
 
     # Put image if available
@@ -63,7 +63,6 @@ elif args[0] == "view":
     command = ("markdown_previewer " + worklog_dir + args[1] + "/log.md").split(" ")
     check_call(command)
 
-# If list, run list
 elif args[0] == "list":
     for log in os.listdir(worklog_dir):
         print(log)
