@@ -63,6 +63,7 @@ elif args[0] == "view":
     command = ("markdown_previewer " + worklog_dir + args[1] + "/log.md").split(" ")
     check_call(command)
 
+# If list, run list
 elif args[0] == "list":
     for log in os.listdir(worklog_dir):
         print(log)
