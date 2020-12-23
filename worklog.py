@@ -5,7 +5,7 @@ import uuid
 from subprocess import DEVNULL, STDOUT, check_call
 from datetime import datetime
 
-worklog_dir = "/home/oliver/Internship/worklog/"
+worklog_dir = "/home/XXX/worklog/"
 image_command = "deepin-screenshot -s " + worklog_dir
 args = sys.argv[1:]
 
